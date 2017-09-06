@@ -64,9 +64,5 @@ $(document).ready(function(){
         if (event.keyCode === 13){document.getElementById('connect').click()}
     });
 
-    // $('#response').onChange(
-    //     $('#response').scrollTop = $('#response').scrollHeight
-    // )
-
 });
 
