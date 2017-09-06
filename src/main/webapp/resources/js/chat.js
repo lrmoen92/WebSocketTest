@@ -47,19 +47,26 @@ function clearBox(id){
 
 function showMessageOutput(messageOutput) {
     var response = document.getElementById('response');
-    var p = document.createElement('p');
-    p.style.wordWrap = 'break-word';
-    p.appendChild(document.createTextNode(" (" + messageOutput.time + ") " + messageOutput.from + ": "
-        + messageOutput.text));
-    response.appendChild(p);
+    response.value += " (" + messageOutput.time + ") " + messageOutput.from + ": "
+        + messageOutput.text;
+    response.value += '\n';
+    response.scrollTop = response.scrollHeight;
 }
 
 $(document).ready(function(){
+    disconnect();
+
     $('#text').keydown(function(event){
         if (event.keyCode === 13){document.getElementById('sendMessage').click()}
     });
+
+    $('#from').keydown(function(event){
+        if (event.keyCode === 13){document.getElementById('connect').click()}
+    });
+
+    // $('#response').onChange(
+    //     $('#response').scrollTop = $('#response').scrollHeight
+    // )
+
 });
 
-$(document).ready(function(){
-    disconnect();
-});
