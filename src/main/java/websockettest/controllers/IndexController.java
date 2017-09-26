@@ -14,4 +14,7 @@ public class IndexController {
     @RequestMapping("/chat")
     public String getChat() {return "chat";}
 
+    @RequestMapping("/cards")
+    public String getCards() {return "cards";}
+
 }
